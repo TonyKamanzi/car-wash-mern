@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import api from "../../api/axios";
 
 
+
 export default function AdminDashboard() {
   const [totalBookings, setTotalBookings] = useState(0);
   const [totalContacts, setTotalContacts] = useState(0);
