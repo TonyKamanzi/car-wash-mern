@@ -45,6 +45,7 @@ export default function Services() {
       img: "/images/icons/tire.png",
     },
   ];
+  
   return (
     <section id="services" className="relative px-6 py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden font-secondary">
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full -translate-y-32 translate-x-32 opacity-30"></div>

@@ -5,7 +5,7 @@ import Register from "../components/users/Register";
 import Home from "../pages/users/Home/Home";
 import Book from "../pages/users/book/book";
 import AdminDashboard from "../pages/admin/AdminDashboard";
-import UserLayout from "../layouts/userLayouts";
+
 import AdminLayouts from "../layouts/AdminLayouts";
 import BookingsList from "../pages/admin/BookingsList";
 import ContactsMessages from "../pages/admin/ContactMessages";
@@ -17,6 +17,7 @@ import ContactUs from "../pages/users/Home/ContactUs";
 import Profile from "../components/Profile";
 import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../pages/admin/MyProfile";
+import UserLayout from "../layouts/UserLayouts";
 
 const router = createBrowserRouter([
   {

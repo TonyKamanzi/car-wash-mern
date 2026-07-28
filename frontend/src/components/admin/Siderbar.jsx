@@ -8,7 +8,7 @@ export default function Sidebar() {
     <>
       {/* Hamburger button for small screens */}
       <button
-        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-blue-800 text-white rounded-md focus:outline-none"
+        className="md:hidden  fixed top-4 left-4 z-50 p-2 bg-blue-800 text-white rounded-md focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle sidebar"
       >
