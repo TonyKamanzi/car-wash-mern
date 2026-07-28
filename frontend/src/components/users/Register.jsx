@@ -14,7 +14,7 @@ export default function Register() {
   function handleSubmit(e) {
     e.preventDefault();
     api
-      .post("/api/users/register", {
+      .post("/api/register", {
         name: username,
         email,
         password,

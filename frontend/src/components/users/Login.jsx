@@ -13,7 +13,7 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     api
-      .post("/api/users/login", {
+      .post("/api/login", {
         email,
         password,
       })
