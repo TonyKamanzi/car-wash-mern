@@ -16,7 +16,10 @@ connectDB();
 // Middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://tony-car-wash.vercel.app/"],
+    origin: [
+      "http://localhost:5173",
+      "https://tony-car-wash-f839m5rbv-tony-f54c.vercel.app",
+    ],
     credentials: true,
   }),
 );
