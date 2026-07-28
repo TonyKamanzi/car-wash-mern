@@ -1,7 +1,8 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import api from "../../../api/axios";
 
 export default function Book() {
  const [fullname, setFullname] = useState("");
@@ -18,8 +19,8 @@ export default function Book() {
   const handleBook = (e) => {
     e.preventDefault();
     const data = { fullname, email, phone, car, service, date, time, notes };
-    axios
-      .post("http://localhost:5001/booking", data)
+    api
+      .post("/api/booking", data)
       .then((res) => {
         console.log(res.data);
         toast.success("Booking successful!");

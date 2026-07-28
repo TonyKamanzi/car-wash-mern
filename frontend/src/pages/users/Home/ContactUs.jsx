@@ -1,7 +1,8 @@
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../../../api/axios";
 
 export default function ContactUs() {
   const [fullname, setFullname] = useState("");
@@ -13,8 +14,8 @@ export default function ContactUs() {
     e.preventDefault();
     const data = { fullname, email, message };
 
-    axios
-      .post("http://localhost:5001/contact", data)
+    api
+      .post("/api/contact", data)
       .then((res) => {
         console.log(res.data);
         navigate("/");

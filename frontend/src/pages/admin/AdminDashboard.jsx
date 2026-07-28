@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { toast } from "react-hot-toast";
+import api from "../../api/axios";
 
 
 export default function AdminDashboard() {
@@ -13,8 +14,8 @@ export default function AdminDashboard() {
 
   const fetchCounts = async () => {
     try {
-      const bookingsRes = await axios.get("http://localhost:5001/booking/count");
-      const contactsRes = await axios.get("http://localhost:5001/contact/count");
+      const bookingsRes = await api.get("/api/booking/count");
+      const contactsRes = await api.get("/api/contact/count");
 
       const newBookings = bookingsRes.data.count;
       const newContacts = contactsRes.data.count;

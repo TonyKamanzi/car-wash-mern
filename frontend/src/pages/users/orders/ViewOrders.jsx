@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import api from "../../api/axios";
 
 export default function ViewOrders() {
   const [orders, setOrders] = useState([]);
@@ -20,8 +21,8 @@ export default function ViewOrders() {
       const email = userObj.email;
 
       // Call your backend API with the user's email
-      const res = await axios.get(
-        `http://localhost:5001/booking/user-orders?email=${encodeURIComponent(
+      const res = await api.get(
+        `/api/booking/user-orders?email=${encodeURIComponent(
           email
         )}`
       );
@@ -40,7 +41,7 @@ export default function ViewOrders() {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://localhost:5001/booking/${id}`);
+      await api.delete(`/api/booking/${id}`);
       toast.success("Order deleted successfully");
       fetchOrders();
     } catch (error) {

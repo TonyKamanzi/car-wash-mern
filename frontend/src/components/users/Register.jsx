@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import api from "../../api/axios";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -11,8 +12,8 @@ export default function Register() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios
-      .post("http://localhost:5001/users/register", {
+    api
+      .post("/api/users/register", {
         name: username,
         email,
         password,

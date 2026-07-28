@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { toast } from "react-toastify";
+import api from "../../api/axios";
+
 
 export default function BookingsList() {
   const [bookings, setBookings] = useState([]);
@@ -8,7 +10,7 @@ export default function BookingsList() {
 
   const fetchBookings = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/booking");
+      const res = await api.get("/api/booking");
       const newBookings = res.data;
 
       if (prevCountRef.current && newBookings.length > prevCountRef.current) {
@@ -30,7 +32,7 @@ export default function BookingsList() {
 
   const updateBookingStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5001/booking/${id}`, { status });
+      await api.put(`/api/booking/${id}`, { status });
       toast.info(`✅ Booking status updated to "${status}"`, {
         position: "bottom-right",
       });

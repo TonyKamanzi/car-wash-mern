@@ -1,7 +1,8 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import api from "../../api/axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -10,8 +11,8 @@ export default function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios
-      .post("http://localhost:5001/users/login", {
+    api
+      .post("/api/users/login", {
         email,
         password,
       })

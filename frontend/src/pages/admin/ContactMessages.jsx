@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { toast } from "react-toastify";
+import api from "../../api/axios";
 
 export default function ContactsMessages() {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5001/contact")
+    api
+      .get("/api/contact")
       .then((res) => {
         setContacts(res.data);
       })
@@ -20,7 +21,7 @@ export default function ContactsMessages() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/contact/${id}`);
+      await api.delete(`/api/contact/${id}`);
       setContacts((prev) => prev.filter((c) => c._id !== id));
       toast.success("Message deleted successfully");
     } catch (error) {
