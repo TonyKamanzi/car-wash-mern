@@ -23,7 +23,7 @@ export default function ViewOrders() {
 
       // Call your backend API with the user's email
       const res = await api.get(
-        `/api/booking/user-orders?email=${encodeURIComponent(
+        `/booking/user-orders?email=${encodeURIComponent(
           email
         )}`
       );
