@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post("/", sendMessage);
 router.get("/", getMessage);
-router.get("/count", getContactsCount);
+router.get("/", getContactsCount);
 router.delete("/:id", deleteMessage)
 
 

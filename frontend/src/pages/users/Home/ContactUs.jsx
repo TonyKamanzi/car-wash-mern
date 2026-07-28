@@ -16,7 +16,7 @@ export default function ContactUs() {
     const data = { fullname, email, message };
 
     api
-      .post("/api/contact", data)
+      .post("/contact", data)
       .then((res) => {
         console.log(res.data);
         navigate("/");
