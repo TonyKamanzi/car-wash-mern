@@ -18,7 +18,7 @@ router.post("/", makeBook);
 router.get("/", getBookings);
 
 // Get bookings count
-router.get("/count", getBookingsCount);
+router.get("/", getBookingsCount);
 router.get("/user-orders", getBookingsByEmail); 
 
 // Get single booking by id
