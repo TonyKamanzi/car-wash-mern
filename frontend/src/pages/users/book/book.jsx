@@ -21,7 +21,7 @@ export default function Book() {
     e.preventDefault();
     const data = { fullname, email, phone, car, service, date, time, notes };
     api
-      .post("/api/booking", data)
+      .post("/booking", data)
       .then((res) => {
         console.log(res.data);
         toast.success("Booking successful!");

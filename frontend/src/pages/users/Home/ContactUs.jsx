@@ -3,6 +3,7 @@ import { useState } from "react";
 // import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import api from "../../../api/axios";
+import { toast } from "react-toastify";
 
 
 export default function ContactUs() {
@@ -19,10 +20,12 @@ export default function ContactUs() {
       .post("/contact", data)
       .then((res) => {
         console.log(res.data);
+        toast.success("Message sent successfully!");
         navigate("/");
       })
       .catch((error) => {
         console.error("Error sending message:", error);
+        toast.error("Failed to send message.");
       });
   };
 

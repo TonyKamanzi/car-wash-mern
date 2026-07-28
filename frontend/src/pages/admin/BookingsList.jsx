@@ -11,7 +11,7 @@ export default function BookingsList() {
 
   const fetchBookings = async () => {
     try {
-      const res = await api.get("/api/booking");
+      const res = await api.get("/booking");
       const newBookings = res.data;
 
       if (prevCountRef.current && newBookings.length > prevCountRef.current) {
@@ -33,7 +33,7 @@ export default function BookingsList() {
 
   const updateBookingStatus = async (id, status) => {
     try {
-      await api.put(`/api/booking/${id}`, { status });
+      await api.put(`/booking/${id}`, { status });
       toast.info(`✅ Booking status updated to "${status}"`, {
         position: "bottom-right",
       });

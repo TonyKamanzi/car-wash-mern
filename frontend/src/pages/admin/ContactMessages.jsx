@@ -10,7 +10,7 @@ export default function ContactsMessages() {
 
   useEffect(() => {
     api
-      .get("/api/contact")
+      .get("/contact")
       .then((res) => {
         setContacts(res.data);
       })
@@ -22,7 +22,7 @@ export default function ContactsMessages() {
 
   const handleDelete = async (id) => {
     try {
-      await api.delete(`/api/contact/${id}`);
+      await api.delete(`/contact/${id}`);
       setContacts((prev) => prev.filter((c) => c._id !== id));
       toast.success("Message deleted successfully");
     } catch (error) {

@@ -15,8 +15,8 @@ export default function AdminDashboard() {
 
   const fetchCounts = async () => {
     try {
-      const bookingsRes = await api.get("/api/booking/count");
-      const contactsRes = await api.get("/api/contact/count");
+      const bookingsRes = await api.get("/booking/count");
+      const contactsRes = await api.get("/contact/count");
 
       const newBookings = bookingsRes.data.count;
       const newContacts = contactsRes.data.count;
